@@ -1,5 +1,5 @@
 /* Offline app shell for ことばでタッチ！. No personal information is stored. */
-const CACHE_NAME = 'kotoba-tap-shell-v1';
+const CACHE_NAME = 'kotoba-tap-shell-v2';
 const PREFIX = 'kotoba-tap-shell-';
 const CORE_FILES = [
   './',
