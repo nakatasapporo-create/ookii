@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#8b78df"/><stop offset="1" stop-color="#6653b7"/>
+    </linearGradient>
+    <linearGradient id="apple" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#ff9ba7"/><stop offset="1" stop-color="#e96884"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="261" r="179" fill="#fff7e3"/>
+  <g fill="#ffde78">
+    <path d="M111 113 L119 132 L139 138 L119 145 L111 165 L102 145 L83 138 L102 132 Z"/>
+    <path d="M394 104 L401 119 L417 125 L401 132 L394 147 L387 132 L371 125 L387 119 Z"/>
+    <circle cx="419" cy="322" r="10"/>
+  </g>
+  <g transform="translate(216 258)">
+    <path d="M-3 -68 Q-7 -97 15 -107" stroke="#766146" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M2 -88 Q46 -123 58 -79 Q31 -57 2 -88" fill="#80c798"/>
+    <path d="M0 -59 C-57 -99-119 -46-107 35 C-97 111 -42 118 0 98 C42 118 102 109 109 30 C118 -46 58 -99 0 -59" fill="url(#apple)" stroke="#d96882" stroke-width="6"/>
+    <path d="M-74 -25 Q-100 8-77 41" stroke="#ffc7ce" stroke-width="17" stroke-linecap="round" fill="none"/>
+    <ellipse cx="-34" cy="20" rx="8" ry="11" fill="#6b4a69"/>
+    <ellipse cx="34" cy="20" rx="8" ry="11" fill="#6b4a69"/>
+    <path d="M-16 51 Q0 67 16 51" stroke="#6b4a69" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <ellipse cx="-61" cy="53" rx="13" ry="8" fill="#faabb5"/>
+    <ellipse cx="61" cy="53" rx="13" ry="8" fill="#faabb5"/>
+  </g>
+  <g transform="translate(352 347) scale(.67)">
+    <path d="M0 -62 V-91" stroke="#766146" stroke-width="13" stroke-linecap="round"/>
+    <path d="M0 -88 Q43 -116 52 -75 Q24 -58 0 -88" fill="#81c99a"/>
+    <path d="M0 -57 C-53 -90-99 -39-92 27 C-86 97-36 102 0 90 C39 106 86 92 93 26 C100 -44 51 -92 0 -57" fill="#fbd878" stroke="#e4ae59" stroke-width="7"/>
+    <circle cx="-28" cy="24" r="8" fill="#77605a"/>
+    <circle cx="27" cy="24" r="8" fill="#77605a"/>
+    <path d="M-11 48 Q0 58 11 48" stroke="#77605a" stroke-width="7" stroke-linecap="round" fill="none"/>
+  </g>
+  <path d="M137 408 Q253 459 373 405" stroke="#d6c9f1" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>

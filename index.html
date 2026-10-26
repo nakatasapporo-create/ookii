@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff9ec">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ことばタッチ">
+  <meta name="description" content="大きい・小さい、多い・少ない、長い・短いを、iPadで楽しくタッチして学ぶアプリ。">
+  <title>ことばでタッチ！ | えらんで あそぼう</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="decor decor-one" aria-hidden="true"></div>
+  <div class="decor decor-two" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true"><span>★</span><span>●</span><span>♥</span></div>
+        <div>
+          <div class="brand-name">ことばで<span>タッチ！</span></div>
+          <p class="brand-sub">みて・きいて・えらぼう</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="setting-toggle" id="musicToggle" type="button" aria-pressed="true" title="音楽のオン・オフ"><span class="setting-icon">♫</span><span id="musicLabel">おと ON</span></button>
+        <button class="setting-toggle" id="voiceToggle" type="button" aria-pressed="true" title="読み上げのオン・オフ"><span class="setting-icon">◖))</span><span id="voiceLabel">こえ ON</span></button>
+      </div>
+    </header>
+
+    <main>
+      <div class="intro-row">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> タッチで たのしく れんしゅう</p>
+          <h1>どっちかな？ <span class="title-sparkle" aria-hidden="true">✳</span></h1>
+        </div>
+        <div class="buddy-small" aria-hidden="true"><span class="buddy-ear ear-left"></span><span class="buddy-ear ear-right"></span><span class="buddy-face">◡</span></div>
+      </div>
+
+      <nav class="mode-nav" aria-label="学習することばを選ぶ">
+        <button class="mode-button active" type="button" data-mode="all" aria-pressed="true"><span class="mode-symbol">✦</span><span>ぜんぶ</span></button>
+        <button class="mode-button" type="button" data-mode="size" aria-pressed="false"><span class="mode-symbol">◉</span><span>おおきさ</span></button>
+        <button class="mode-button" type="button" data-mode="amount" aria-pressed="false"><span class="mode-symbol">●●</span><span>かず</span></button>
+        <button class="mode-button" type="button" data-mode="length" aria-pressed="false"><span class="mode-symbol">▬</span><span>ながさ</span></button>
+      </nav>
+
+      <section class="play-panel" id="playPanel" aria-labelledby="questionText">
+        <div class="panel-top">
+          <div class="lesson-pill" id="lessonPill"><span class="pill-dot"></span> おおきさ の もんだい</div>
+          <div class="progress-box" aria-label="進み具合">
+            <span class="progress-title">できたよ！</span>
+            <div class="progress-stars" id="progressStars" aria-hidden="true"></div>
+            <span class="progress-number" id="progressNumber">0 / 6</span>
+          </div>
+        </div>
+
+        <div class="question-block">
+          <p class="question-overline">えを みて こたえてね</p>
+          <div class="question-line">
+            <h2 id="questionText">おおきい りんごは どっち？</h2>
+            <button class="speak-button" id="speakButton" type="button" aria-label="もんだいを きく"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12-.5a5 5 0 0 1 0 7m2.5-10a9 9 0 0 1 0 13"/></svg><span>きく</span></button>
+          </div>
+        </div>
+
+        <div class="choice-grid" id="choiceGrid">
+          <button type="button" class="choice-card choice-left" data-choice="0" aria-label="ひだりの えを えらぶ">
+            <span class="choice-corner">①</span><span class="choice-visual" id="visualLeft" aria-hidden="true"></span><span class="choice-bottom"><span class="tap-circle">☝</span> ここを タッチ！</span>
+          </button>
+          <button type="button" class="choice-card choice-right" data-choice="1" aria-label="みぎの えを えらぶ">
+            <span class="choice-corner">②</span><span class="choice-visual" id="visualRight" aria-hidden="true"></span><span class="choice-bottom"><span class="tap-circle">☝</span> ここを タッチ！</span>
+          </button>
+        </div>
+
+        <div class="panel-bottom">
+          <p class="help-line" id="helpLine" role="status" aria-live="polite"><span class="help-sparkle">✦</span> すきな えを ゆびで タッチしてね！</p>
+          <button class="skip-button" type="button" id="skipButton">つぎの もんだい <span aria-hidden="true">→</span></button>
+        </div>
+
+        <div class="reward-screen" id="rewardScreen" hidden role="dialog" aria-modal="true" aria-labelledby="rewardTitle">
+          <div class="confetti-field" id="confettiField" aria-hidden="true"></div>
+          <div class="reward-scene" aria-hidden="true">
+            <div class="reward-ray ray-a"></div><div class="reward-ray ray-b"></div><div class="reward-ray ray-c"></div>
+            <div class="rainbow rainbow-outer"></div><div class="rainbow rainbow-inner"></div>
+            <div class="reward-buddy"><span class="reward-ear reward-ear-l"></span><span class="reward-ear reward-ear-r"></span><span class="reward-body"><span class="reward-eye left-eye"></span><span class="reward-eye right-eye"></span><span class="reward-mouth">ᴗ</span><span class="reward-cheek cheek-l"></span><span class="reward-cheek cheek-r"></span></span></div>
+            <div class="reward-star star-one">★</div><div class="reward-star star-two">★</div><div class="reward-star star-three">✦</div>
+          </div>
+          <p class="reward-kicker">キラキラ だいせいかい！</p>
+          <h2 class="reward-title" id="rewardTitle">やったね！</h2>
+          <p class="reward-copy" id="rewardCopy">ほしを ひとつ ゲット！</p>
+          <button type="button" class="next-button" id="nextButton">つぎへ <span aria-hidden="true">➜</span></button>
+        </div>
+
+        <div class="finish-screen" id="finishScreen" hidden aria-labelledby="finishTitle">
+          <div class="finish-stars" aria-hidden="true">★ ★ ★ ★ ★ ★</div>
+          <div class="finish-medal" aria-hidden="true">🏅</div>
+          <p class="finish-small">6もん チャレンジ</p>
+          <h2 id="finishTitle">ぜんぶ できたね！</h2>
+          <p class="finish-message">たくさん えらべたね。すごい！</p>
+          <div class="finish-actions"><button class="again-button" id="againButton" type="button">もういちど あそぶ <span aria-hidden="true">↻</span></button></div>
+        </div>
+      </section>
+
+      <div class="below-panel">
+        <div class="teacher-note"><span class="note-icon" aria-hidden="true">♡</span><span>せいかいしたら、ほめて あげよう！</span></div>
+        <details class="teacher-details"><summary>先生・保護者の方へ <span aria-hidden="true">⌄</span></summary><p>「どっち？」と声をかけ、子どもが指差しした絵を大人がタップしても使えます。問題はランダムに左右が入れ替わります。誤答時は正解を明かさず、再挑戦できます。iPadは消音モードや音量設定によって音が出ない場合があります。</p><p>iPadのSafariでこのページを開き、共有ボタンから「ホーム画面に追加」を選ぶと、アプリのように起動できます。一度オンラインで開いて読み込みが完了すれば、次回からオフラインでも使えます。</p><p><a href="./downloads/kotoba-tap-pwa.zip" download>アプリのPWAファイル一式（ZIP）をダウンロード</a></p></details>
+      </div>
+    </main>
+    <footer class="site-footer">ことばでタッチ！ <span>✳</span> じぶんの ペースで たのしく</footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "ことばでタッチ！ えらんで あそぼう",
+  "short_name": "ことばタッチ",
+  "description": "大きい・小さい、多い・少ない、長い・短いを、絵を見て楽しく選ぶ学習アプリ。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff9ed",
+  "theme_color": "#fff9ed",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
